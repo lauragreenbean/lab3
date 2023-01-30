@@ -16,3 +16,12 @@ html {
   border: purple 50px;
   text-align: center;
 }
+
+
+#story{
+  background-color: rgb(218, 214, 246);
+  border: 5px solid purple;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
