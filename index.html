@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <h1>Lab 3: Mad Libs Project</h1>
-    <p>Generate your own adventure!</p>
+    <p>Generate your own story!</p>
     <!-- create form inputs and submit button -->
     <form method="get" id="form">
         <div class="form-group">          
@@ -83,7 +83,7 @@
   
 </body>
 <script>
-    // When we click the submit button, log the values of the form inputs in console.
+    // When we click the submit button, log the values of the form inputs in console. It will save the params in the URL.
     document.getElementById('submit').addEventListener('click', function (event){
           console.log(urlParams.get('name').value);
           console.log(urlParams.get('location').value);
