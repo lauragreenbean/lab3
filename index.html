@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Lab 3: Mad Libs Project</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Lab 3: Mad Libs Project</h1>
+    <p>Generate your own adventure!</p>
+    <!-- create form inputs and submit button -->
+    <form method="get" id="form">
+        <div class="form-group">          
+            <label for="name">Witch's name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div> 
+        <br><br>
+
+        <div class="form-group">          
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter an location">
+        </div>
+        <br><br>
+
+        <div class="form-group">          
+            <label for="adjective1">Adjective:</label>
+            <input type="text" id="adjective1" name="adjective1" placeholder="Enter an adjective">
+        </div>
+        <br><br>
+
+        <div class="form-group">          
+            <label for="magicPower1">Magic power:</label>
+            <input type="text" id="magicPower1" name="magicPower1" placeholder="Enter a magic power">
+        </div>
+        <br><br>
+
+        <div class="form-group">          
+            <label for="verb">Verb:</label>
+            <input type="text" id="verb" name="verb" placeholder="Enter a verb">
+        </div>
+        <br><br>
+
+        <div class="form-group">          
+            <label for="adjective2">Adjective:</label>
+            <input type="text" id="adjective2" name="adjective2" placeholder="Enter another adjective">
+        </div>
+        <br><br>
+
+        <div class="form-group">          
+          <label for="house_type">House type:</label>
+          <input type="text" id="house_type" name="house_type" placeholder="Enter a place for the witch to live in">
+        </div>
+        <br><br>
+        
+        <div class="form-group">          
+            <label for="pet_type">Pet type:</label>
+            <input type="text" id="pet_type" name="pet_type" placeholder="Enter a pet type">
+        </div>
+        <br><br>
+        
+        <div class="form-group">          
+            <label for="plant_type">Plant type:</label>
+            <input type="text" id="plant_type" name="plant_type" placeholder="Enter a plant type">
+        </div>
+        <br><br>
+
+      <button id="submit" type="submit" class="btn">Submit</button>
+    </form>
+
+    <div id="story">
+        <p> </p>
+    </div>
+  </div>
+  
+  
+</body>
+<script>
+    // When we click the submit button, log the values of the form inputs.
+    document.getElementById('submit').addEventListener('click', function (event){
+          console.log(urlParams.get('name').value);
+          console.log(urlParams.get('location').value);
+          console.log(urlParams.get('adjective1').value);
+          console.log(urlParams.get('magicPower1').value);
+          console.log(urlParams.get('verb').value);
+          console.log(urlParams.get('adjective2').value);
+          console.log(urlParams.get('house_type').value);
+          console.log(urlParams.get('pet_type').value);
+          console.log(urlParams.get('plant_type').value);
+
+
+  
+      // Hide the form.
+      document.getElementById('form').style.display = 'none';
+
+      //get parameters and add to the story
+      document.getElementById('story').innerHTML = 'Once upon a time there was a witch named '+ urlParams.get('name') + '. She was an outcast outside of ' + urlParams.get('location') + ' because she was ' + urlParams.get('adjective1') + '. The villagers did know that she practiced ' + urlParams.get('magicPower1') + ' and could '+ urlParams.get('verb') + '. She lived in a ' + urlParams.get('adjective2')+ '. '+ urlParams.get('house_type')+ ' with her two ' + urlParams.get('pet_type')+ ' Outside her home was a garden full of '+ urlParams.get('plant_type') + '. '+ urlParams.get('name') + ' picked all her '+ urlParams.get('plant_type')+' and made dinner with the villagers so that they could live peace. The end.'.value;
+    });
+  
+    // Get the URL parameters and add them to the story.
+    var urlParams = new URLSearchParams(window.location.search);
+      document.getElementById('name');
+      document.getElementById('location');
+      document.getElementById('adjective1');
+      document.getElementById('magicPower1');
+      document.getElementById('verb');
+      document.getElementById('adjective2');
+      document.getElementById('house_type');
+      document.getElementById('pet_type');
+      document.getElementById('plant_type');
+
+
+
+  
+  
+    // If we have the parameters, hide the form and show the story.
+    if (urlParams.get('name') && urlParams.get('location') && urlParams.get('adjective1') && urlParams.get('magicPower1') && urlParams.get('verb') && urlParams.get('adjective2')&& urlParams.get('house_type')&& urlParams.get('pet_type')&& urlParams.get('plant_type')) {
+      document.getElementById('form').style.display = 'none';
+      document.getElementById('story').innerHTML = 'Once upon a time there was a witch named '+ urlParams.get('name') + '. She was an outcast outside of ' + urlParams.get('location') + ' because she was ' + urlParams.get('adjective1') + '. The villagers did know that she practiced ' + urlParams.get('magicPower1') + ' and could '+ urlParams.get('verb') + '. She lived in a ' + urlParams.get('adjective2')+ ' '+ urlParams.get('house_type')+ ' with her two ' + urlParams.get('pet_type')+ '. Outside her home was a garden full of '+ urlParams.get('plant_type')+'. '+ urlParams.get('name') + ' picked all her '+ urlParams.get('plant_type')+' and made dinner with the villagers so that they could live peace. The end.';
+    }
+  
+    // Add a button to the story to clear the form.
+    document.getElementById('story').innerHTML += '<br><a class="btn "href="index.html">Clear the form</a>';
+  
+  </script>
+<!--Once upon a time there was a witch named [name]. She was an outcast outside of [location] because she was [adjective]. The villagers did know that she practiced [magicPower1] and could [verb]. She lived in a [adjective2] [house_type] with her two [pet_type]. Outside her home was a garden full of [plant_type]. [name] picked all her [plant_type] and made dinner with the villagers so that they could live peace. The end.
+-->
+</html>
+

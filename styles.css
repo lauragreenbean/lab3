@@ -1,0 +1,18 @@
+html {
+    position: relative;
+    min-height: 100%;;
+  }
+
+  body {
+    background-color: rgb(183, 176, 230);
+    margin-bottom: 600px;
+  
+  }
+
+.container {
+  width: auto;
+  max-width: 1000px;
+  padding: 100px;
+  border: purple 50px;
+  text-align: center;
+}
