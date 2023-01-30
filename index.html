@@ -66,6 +66,11 @@
             <input type="text" id="plant_type" name="plant_type" placeholder="Enter a plant type">
         </div>
         <br><br>
+        <div class="form-group">          
+          <label for="meal_type">Meal type:</label>
+          <input type="text" id="meal_type" name="meal_type" placeholder="Enter a meal type ">
+      </div>
+      <br><br>
 
       <button id="submit" type="submit" class="btn">Submit</button>
     </form>
@@ -78,7 +83,7 @@
   
 </body>
 <script>
-    // When we click the submit button, log the values of the form inputs.
+    // When we click the submit button, log the values of the form inputs in console.
     document.getElementById('submit').addEventListener('click', function (event){
           console.log(urlParams.get('name').value);
           console.log(urlParams.get('location').value);
@@ -89,6 +94,7 @@
           console.log(urlParams.get('house_type').value);
           console.log(urlParams.get('pet_type').value);
           console.log(urlParams.get('plant_type').value);
+          console.log(urlParams.get('house_type').value);
 
 
   
@@ -96,7 +102,7 @@
       document.getElementById('form').style.display = 'none';
 
       //get parameters and add to the story
-      document.getElementById('story').innerHTML = 'Once upon a time there was a witch named '+ urlParams.get('name') + '. She was an outcast outside of ' + urlParams.get('location') + ' because she was ' + urlParams.get('adjective1') + '. The villagers did know that she practiced ' + urlParams.get('magicPower1') + ' and could '+ urlParams.get('verb') + '. She lived in a ' + urlParams.get('adjective2')+ '. '+ urlParams.get('house_type')+ ' with her two ' + urlParams.get('pet_type')+ ' Outside her home was a garden full of '+ urlParams.get('plant_type') + '. '+ urlParams.get('name') + ' picked all her '+ urlParams.get('plant_type')+' and made dinner with the villagers so that they could live peace. The end.'.value;
+      document.getElementById('story').innerHTML = 'Once upon a time there was a witch named '+ urlParams.get('name') + '. She was an outcast outside of ' + urlParams.get('location') + ' because she was ' + urlParams.get('adjective1') + '. The villagers did know that she practiced ' + urlParams.get('magicPower1') + ' and could '+ urlParams.get('verb') + '. She lived in a ' + urlParams.get('adjective2')+ '. '+ urlParams.get('house_type')+ ' with her two ' + urlParams.get('pet_type')+ ' Outside her home was a garden full of '+ urlParams.get('plant_type') + '. '+ urlParams.get('name') + ' picked all her '+ urlParams.get('plant_type')+' and made' + urlParams.get('meal_type') + 'with the villagers so that they could live peace. The end.'.value;
     });
   
     // Get the URL parameters and add them to the story.
@@ -115,10 +121,10 @@
 
   
   
-    // If we have the parameters, hide the form and show the story.
+    // If we have the parameter , hide the form and show the story.
     if (urlParams.get('name') && urlParams.get('location') && urlParams.get('adjective1') && urlParams.get('magicPower1') && urlParams.get('verb') && urlParams.get('adjective2')&& urlParams.get('house_type')&& urlParams.get('pet_type')&& urlParams.get('plant_type')) {
       document.getElementById('form').style.display = 'none';
-      document.getElementById('story').innerHTML = 'Once upon a time there was a witch named '+ urlParams.get('name') + '. She was an outcast outside of ' + urlParams.get('location') + ' because she was ' + urlParams.get('adjective1') + '. The villagers did know that she practiced ' + urlParams.get('magicPower1') + ' and could '+ urlParams.get('verb') + '. She lived in a ' + urlParams.get('adjective2')+ ' '+ urlParams.get('house_type')+ ' with her two ' + urlParams.get('pet_type')+ '. Outside her home was a garden full of '+ urlParams.get('plant_type')+'. '+ urlParams.get('name') + ' picked all her '+ urlParams.get('plant_type')+' and made dinner with the villagers so that they could live peace. The end.';
+      document.getElementById('story').innerHTML = 'Once upon a time there was a witch named '+ urlParams.get('name') + '. She was an outcast outside of ' + urlParams.get('location') + ' because she was ' + urlParams.get('adjective1') + '. The villagers did know that she practiced ' + urlParams.get('magicPower1') + ' and could '+ urlParams.get('verb') + '. She lived in a ' + urlParams.get('adjective2')+ ' '+ urlParams.get('house_type')+ ' with her two ' + urlParams.get('pet_type')+ '. Outside her home was a garden full of '+ urlParams.get('plant_type')+'. '+ urlParams.get('name') + ' picked all her '+ urlParams.get('plant_type')+' and made' + urlParams.get('meal_type') + 'with the villagers so that they could live peace. The end.';
     }
   
     // Add a button to the story to clear the form.
